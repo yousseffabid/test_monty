@@ -8,10 +8,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <ctype.h>
 #define VALID 1
 #define PUSH 0 
-int DATA;
+ char *DATA;
 /*
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -45,8 +45,8 @@ typedef struct instruction_s
 
 void interpret_line(char *line, unsigned int line_number, stack_t **stack);
 int digits(char *data);
-int valid(char *function_name, char *data);
-void print_error(char *line, unsigned int line_number, int valid_or_not);
+int valid(char *function_name);
+void print_error(char *line, unsigned int line_number);
 void exec_func(char *function_name, unsigned int line_number, stack_t **stack);
 void free_stack(stack_t **stack);
 

@@ -9,17 +9,17 @@
 
 void interpret_line(char *line, unsigned int line_number, stack_t **stack)
 {
-	char *function_name, *data;
+	char *function_name;
 	int valid_or_not;
 
 	function_name = strtok(line, " \t\a\n");
 	if (function_name != NULL)
 	{
-		data = strtok(NULL, " \t\a\n");
-		valid_or_not = valid(function_name, data);
+		DATA = strtok(NULL, " \t\a\n");
+		valid_or_not = valid(function_name);
 		if (valid_or_not != VALID)
 		{
-			print_error(line, line_number, valid_or_not);
+			print_error(line, line_number);
 			free_stack(stack);
 			free(line);
 			exit(EXIT_FAILURE);
