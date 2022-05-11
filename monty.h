@@ -44,6 +44,7 @@ typedef struct instruction_s
 } instruction_t;
 
 void interpret_line(char *line, unsigned int line_number, stack_t **stack);
+int digits(char *data);
 int valid(char *function_name, char *data);
 void print_error(char *line, unsigned int line_number, int valid_or_not);
 void exec_func(char *function_name, unsigned int line_number, stack_t **stack);
