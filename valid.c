@@ -2,14 +2,14 @@
 
 int valid(char *function_name, char *data)
 {
-	char name[][10] = {"push", "pall", "pint", "swap", "add", "nop"};
+	char name[][10] = {"push", "pall", "pint", "pop", "swap", "add", "nop"};
 	unsigned int i;
 
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < 7; i++)
 	{
 		if (strcmp(name[i], function_name) == 0)
 		{
-			if (name[i] == PUSH)
+			if (i == PUSH)
 			{
 				DATA = atoi(data);
 				if (data[0] != '0' && DATA == 0)

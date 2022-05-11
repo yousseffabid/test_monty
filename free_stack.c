@@ -9,7 +9,6 @@ void free_stack(stack_t **stack)
 	{
 		tmp = ptr;
 		ptr = ptr->next;
-		ptr->prev = NULL;
 		free(tmp);
 	}
 }

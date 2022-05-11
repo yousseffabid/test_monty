@@ -2,13 +2,12 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *ptr, *new;
+	stack_t *new;
 
 	(void)line_number;
 
 	if (stack == NULL)
 		return;
-	ptr = *stack;
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
@@ -18,11 +17,11 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 	new->n = DATA;
 	new->prev = NULL;
-	if (ptr != NULL)
-		new->next = ptr->next;
-	else
-		new->next = NULL;
-	ptr = new;
+	if (*stack != NULL)
+		(*stack)->prev = new;
+
+	new->next = *stack;
+	*stack = new;
 }
 
 
@@ -48,7 +47,7 @@ void pint(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d", (*stack)->n);
+	printf("%d\n", (*stack)->n);
 }
 
 
@@ -64,8 +63,10 @@ void pop(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	ptr = *stack;
-	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
+	if ((*stack)->next != NULL)
+		*stack = (*stack)->next;
+	else
+		*stack = NULL;
 	free(ptr);
 }
 

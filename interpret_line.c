@@ -6,13 +6,10 @@ void interpret_line(char *line, unsigned int line_number, stack_t **stack)
 	int valid_or_not;
 
 	function_name = strtok(line, " \n");
-
 	if (function_name != NULL)
 	{
 		data = strtok(NULL, " \n");
-
 		valid_or_not = valid(function_name, data);
-
 		if (valid_or_not != VALID)
 		{
 			print_error(line, line_number, valid_or_not);
