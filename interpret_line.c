@@ -12,10 +12,10 @@ void interpret_line(char *line, unsigned int line_number, stack_t **stack)
 	char *function_name, *data;
 	int valid_or_not;
 
-	function_name = strtok(line, " \n");
+	function_name = strtok(line, " \t\a\n");
 	if (function_name != NULL)
 	{
-		data = strtok(NULL, " \n");
+		data = strtok(NULL, " \t\a\n");
 		valid_or_not = valid(function_name, data);
 		if (valid_or_not != VALID)
 		{
