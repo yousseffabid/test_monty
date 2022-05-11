@@ -1,6 +1,5 @@
 #include "monty.h"
 
-
 /**
  * digits - checks if data is only composed of digits
  * @data: string to check
@@ -128,11 +127,9 @@ void add(stack_t **stack, unsigned int line_number)
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	temp = *stack;
-	integer = temp->n;
-	*stack = temp->next;
-	(*stack)->prev = NULL;
-	(*stack)->n = (*stack)->n + integer;
-	free(temp);
+	integer = (*stack)->n;
+	pop(stack, line_number);
+	(*stack)->n += (*stack)->n + integer;
+
 }
 
