@@ -49,12 +49,15 @@ void push(stack_t **stack, unsigned int line_number)
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
+
 	new->n = atoi(DATA);
 	new->prev = NULL;
+	new->next = NULL;
 	if (*stack != NULL)
+	{
+		new->next = *stack;
 		(*stack)->prev = new;
-
-	new->next = *stack;
+	}
 	*stack = new;
 }
 
