@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * valid - checks if th e syntax is valid
+ * @function_name: name of the function that can be "push"
+ * @data: integer to be pushed if the function is push
+ * Return: -1 (push doesn t have an arg) or 0 (function is unknown) on failure and 1 on success
+ */
 int valid(char *function_name, char *data)
 {
 	char name[][10] = {"push", "pall", "pint", "pop", "swap", "add", "nop"};

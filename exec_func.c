@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * exec_func - execute function
+ * @function_name: name of the function ex: push
+ * @line_number: line number of the instruction
+ * Return: void
+ */
 void exec_func(char *function_name, unsigned int line_number, stack_t **stack)
 {
 	instruction_t code[] = {{"push", push}, {"pall", pall}, {"pop", pop}, {"pint", pint},

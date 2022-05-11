@@ -1,4 +1,11 @@
 #include "monty.h"
+/**
+ * interpret_line - interprets line
+ * @line: string containing the linei
+ * @line_number: number of line
+ * @stack: pointer to stack head
+ * Return: void
+ */
 
 void interpret_line(char *line, unsigned int line_number, stack_t **stack)
 {
