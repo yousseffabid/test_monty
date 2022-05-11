@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ * push - add node at the end of double linked list.
+ *
+ * @stack: pointer to the first node
+ * @line_number: data to populate the node
+ * Return: the pointer to the new node
+ */
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
@@ -24,6 +31,12 @@ void push(stack_t **stack, unsigned int line_number)
 	*stack = new;
 }
 
+/**
+ * pall - prints the elements of a linked list
+ *
+ * @stack: the pointer to stack's first element
+ * @line_number: line of the file being processed.
+ */
 
 void pall(stack_t **stack, unsigned int line_number)
 {
@@ -39,6 +52,12 @@ void pall(stack_t **stack, unsigned int line_number)
 	}
 }
 
+/**
+ * pint - prints last item of stack
+ *
+ * @stack: the pointer to the stack
+ * @line_number: line of the file being processed.
+ */
 
 void pint(stack_t **stack, unsigned int line_number)
 {
@@ -50,6 +69,12 @@ void pint(stack_t **stack, unsigned int line_number)
 	printf("%d\n", (*stack)->n);
 }
 
+/**
+ * pop - removes the last element of a stack
+ *
+ * @stack: the pointer to the stack
+ * @line_number: line of the file being processed.
+ */
 
 void pop(stack_t **stack, unsigned int line_number)
 {
@@ -70,6 +95,11 @@ void pop(stack_t **stack, unsigned int line_number)
 	free(ptr);
 }
 
+/**
+ * swap - swaps the top two elements of the stack
+ * @stack: the pointer to the stack
+ * @line_number: line of the file being processed.
+ */
 
 void swap(stack_t **stack, unsigned int line_number)
 {
